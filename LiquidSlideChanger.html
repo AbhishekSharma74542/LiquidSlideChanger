@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<style>
+body {
+     background-color:#cbffcb;
+}
+h1 {
+    text-align: center;
+}
+div.class1{
+	position: static;
+	max-height: 100%;
+	max-width: 100%;
+	padding: 10px;
+	border: 10px solid #00cccc;
+	margin: 10px;
+	background-color:#e5ffff;
+	text-align: justify;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+img {
+   border: 1px;
+   padding-left: 4px;
+   float : right;
+}
+li {
+    display: none;
+    font-weight: bold;
+    background-color: #99ffff;
+    width: 80px;
+    text-align: center;
+    padding: 8px;
+    text-transform: uppercase;
+}
+li:hover, a:active {
+    background-color: #7A991A;
+}
+select.mobileSelect {
+	background-color: #99ffff;
+	width : 200px;
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+select {
+	background-color: #98bf21;
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	padding : 6px;
+}
+@media screen and (min-width: 480px){
+
+div.selectMenu{
+	padding-left:10px;
+	padding-top:10px;
+}
+div.class1{
+	position: static;
+	max-height: 100%;
+	max-width: 100%;
+	padding: 10px;
+	border: 25px solid #007800;
+	margin: 10px;
+	background-color:#b1ffb1;
+	text-align: justify;
+}
+
+li {
+    float: left;
+	display: block;
+	background-color: #ccffdd;
+    font-weight: bold;
+    color: #80ffaa;
+    width: 120px;
+    text-align: center;
+    padding: 4px;
+    text-transform: uppercase;
+}
+select.mobileSelect {
+	background-color: #99ffff;
+	width : 200px;
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+div.mobileSelect{
+    display : none;
+}
+li:hover, a:active {
+    background-color: #7A991A;
+}
+}
+</style>
+
+<body ng-controller = 'myController'>
+
+<h1><b>10 Ways Our Ancestors Killed Themselves In The Name Of Fashion</b></h1>
+
+<div class="class1">
+	<ul>
+	  <li ng-click = "Cream()" ng-model="Cream" ><a href="">Cream</a></li>
+	  <li ng-click = "Dress()" ng-model="Dress"><a href="">Dress</a></li>
+	  <li ng-click = "Shoe()" ng-model="Shoe"><a href="">Shoes</a></li>
+	</ul>
+	<div class = "mobileSelect">
+		<select class = "mobileSelect" ng-model="Hello1" ng-change = "myFunction(Hello1)">
+			<option value = "Cream" >Cream</option>
+			<option value = "Dress">Dress</option>
+			<option value = "Shoe">Shoes</option>
+		</select>
+	</div>
+	<br>
+	<br>
+	<p class="class1">
+		<img src="{{imgsrc}}" width="100" height="110">{{info}}
+	</p>
+</div>
+<div class = "selectMenu">
+	<h6><i>Change Default Value :</i></h6>
+	<select ng-model="Hello2" ng-change = "myFunction(Hello2)">
+		<option value = "Cream" >Cream</option>
+		<option value = "Dress">Dress</option>
+		<option value = "Shoe">Shoe</option>
+	</select>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope) {
+    $scope.info = "The caged crinoline (or hoop skirt) was a skirt with wide internal frames made of whalebone, cane, steel, or iron that our grandmothers wore to have an hourglass shape.In some instances, inflated rubber tires were used in place of the cages. Crinolines were the craze during their days, and people even coined the word “crinolinemania” to refer to the crinoline “madness.” Women who wore the crinoline, which could be nearly 2 meters (6 ft) wide at its base, often had problems passing through doors of houses and horse-drawn carriages. Some cartoons even showed women putting the crinolines on their carriages. Besides the inconvenience, the crinoline was also a real fire hazard. Its abnormally wide base meant it could touch fire without the wearer knowing. The highly flammable silk and cotton materials used for the skirts and the wide base between the legs of the wearer also meant the flame could burn easily. In fact, the New York Times reported that—within two months—19 women were killed after their crinolines caught fire. Aside from being caught in a fire, women wearing crinolines were sometimes blown around by heavy winds. They also got caught in factory machines, between chairs at restaurants, and by carriage wheels";
+	$scope.imgsrc = "http://www.makeit-loveit.com/wp-content/uploads/2014/10/how-to-make-a-hoop-skirt-5.jpg";
+	$scope.Dress = function(){
+		$scope.info = "The caged crinoline (or hoop skirt) was a skirt with wide internal frames made of whalebone, cane, steel, or iron that our grandmothers wore to have an hourglass shape.In some instances, inflated rubber tires were used in place of the cages. Crinolines were the craze during their days, and people even coined the word “crinolinemania” to refer to the crinoline “madness.” Women who wore the crinoline, which could be nearly 2 meters (6 ft) wide at its base, often had problems passing through doors of houses and horse-drawn carriages. Some cartoons even showed women putting the crinolines on their carriages. Besides the inconvenience, the crinoline was also a real fire hazard. Its abnormally wide base meant it could touch fire without the wearer knowing. The highly flammable silk and cotton materials used for the skirts and the wide base between the legs of the wearer also meant the flame could burn easily. In fact, the New York Times reported that—within two months—19 women were killed after their crinolines caught fire. Aside from being caught in a fire, women wearing crinolines were sometimes blown around by heavy winds. They also got caught in factory machines, between chairs at restaurants, and by carriage wheels";
+		$scope.imgsrc = "http://www.makeit-loveit.com/wp-content/uploads/2014/10/how-to-make-a-hoop-skirt-5.jpg";
+		}
+	$scope.Cream = function(){
+		$scope.info = "Having a pale, white skin was the “in” thing during the Elizabethan era. Pale skin was believed to be a symbol of wealth, as only a rich woman who did not need to work in the sun could have it. This forced the women of the day to do everything possible to get a pale look. Some rubbed their skin with ceruse—a dangerous and deadly mixture of lead and vinegar. People of the day warned them about using ceruse on their skin and advised them to use less deadly items like egg whites, alum, and tin ash. Others used chalk, and some even experimented with human and animal urine.The mixtures the women rubbed on their faces often created a screen and made them so white that they had to draw their veins on their skin. They were always careful not to laugh lest the screen cracked. Some women, while not using dangerous chemicals, took it to greater extents by using leeches to drain their blood and get a pale skin";
+		$scope.imgsrc = "https://s-media-cache-ak0.pinimg.com/736x/10/c3/b4/10c3b44cb5b04945c19449ca577a2ac0.jpg";
+		}
+	$scope.Shoe = function(){
+		$scope.info = "Nitrobenzene is a toxic chemical used in holding the contents of shoe polishes together. Unfortunately, nitrobenzene can enter the human body through the skin of whoever wears a shoe polished with it. Interestingly, our grandparents knew the dangers associated with the chemical, yet they continued using it. In fact, when polish makers made a nonpoisonous solvent to replace the chemical, our grandparents rejected the new polish because it was odorless, which made them believe it was a knockoff and not the real thing.Nitrobenzene did not have a definite effect on victims, and it often led to different things in different people. Some people merely ended up with involuntary shaking of their body, while others went into coma or even died. One college student required two blood transfusions after coming in contact with it.The worst hit were people who consumed alcohol after coming in contact with nitrobenzene. A factory worker who handled it at his place of work once fainted after drinking alcohol. Another salesperson, who had used a nitrobenzene-based shoe polish, died four and a half hours after drinking alcohol, which reacted with the toxic chemical in his body";
+		$scope.imgsrc = "http://ecx.images-amazon.com/images/I/71yxwuDrFTL._UY395_.jpg";
+		}
+	$scope.myFunction = function(Hello2){
+		if(Hello2 == "Dress"){
+		$scope.info = "The caged crinoline (or hoop skirt) was a skirt with wide internal frames made of whalebone, cane, steel, or iron that our grandmothers wore to have an hourglass shape.In some instances, inflated rubber tires were used in place of the cages. Crinolines were the craze during their days, and people even coined the word “crinolinemania” to refer to the crinoline “madness.” Women who wore the crinoline, which could be nearly 2 meters (6 ft) wide at its base, often had problems passing through doors of houses and horse-drawn carriages. Some cartoons even showed women putting the crinolines on their carriages. Besides the inconvenience, the crinoline was also a real fire hazard. Its abnormally wide base meant it could touch fire without the wearer knowing. The highly flammable silk and cotton materials used for the skirts and the wide base between the legs of the wearer also meant the flame could burn easily. In fact, the New York Times reported that—within two months—19 women were killed after their crinolines caught fire. Aside from being caught in a fire, women wearing crinolines were sometimes blown around by heavy winds. They also got caught in factory machines, between chairs at restaurants, and by carriage wheels";
+		$scope.imgsrc = "http://www.makeit-loveit.com/wp-content/uploads/2014/10/how-to-make-a-hoop-skirt-5.jpg";
+		}
+		if(Hello2 == "Cream"){
+		$scope.info = "Having a pale, white skin was the “in” thing during the Elizabethan era. Pale skin was believed to be a symbol of wealth, as only a rich woman who did not need to work in the sun could have it. This forced the women of the day to do everything possible to get a pale look. Some rubbed their skin with ceruse—a dangerous and deadly mixture of lead and vinegar. People of the day warned them about using ceruse on their skin and advised them to use less deadly items like egg whites, alum, and tin ash. Others used chalk, and some even experimented with human and animal urine.The mixtures the women rubbed on their faces often created a screen and made them so white that they had to draw their veins on their skin. They were always careful not to laugh lest the screen cracked. Some women, while not using dangerous chemicals, took it to greater extents by using leeches to drain their blood and get a pale skin";
+		$scope.imgsrc = "https://s-media-cache-ak0.pinimg.com/736x/10/c3/b4/10c3b44cb5b04945c19449ca577a2ac0.jpg";
+		}
+		if(Hello2 == "Shoe"){
+		$scope.info = "Nitrobenzene is a toxic chemical used in holding the contents of shoe polishes together. Unfortunately, nitrobenzene can enter the human body through the skin of whoever wears a shoe polished with it. Interestingly, our grandparents knew the dangers associated with the chemical, yet they continued using it. In fact, when polish makers made a nonpoisonous solvent to replace the chemical, our grandparents rejected the new polish because it was odorless, which made them believe it was a knockoff and not the real thing.Nitrobenzene did not have a definite effect on victims, and it often led to different things in different people. Some people merely ended up with involuntary shaking of their body, while others went into coma or even died. One college student required two blood transfusions after coming in contact with it.The worst hit were people who consumed alcohol after coming in contact with nitrobenzene. A factory worker who handled it at his place of work once fainted after drinking alcohol. Another salesperson, who had used a nitrobenzene-based shoe polish, died four and a half hours after drinking alcohol, which reacted with the toxic chemical in his body";
+		$scope.imgsrc = "http://ecx.images-amazon.com/images/I/71yxwuDrFTL._UY395_.jpg";
+		}
+	}
+	});
+</script>
+</body>
+</html>
+
